@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch UI Design</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-state="idle"></body>
+<div class="wrapper">
+    <div class="timer">
+        <div class="container" onclick="toggle()">
+        <circular-progressbar
+            id="cpb"
+            min="0"
+            max="60"
+            value="0"
+            angle="180"
+            gap="0" 
+            size="256"
+            width="16"
+            color="#b224ef"
+            track-color="white"
+        >
+        </circular-progressbar>
+        <div class="label">00:00:00</div>
+        <div class="controls">
+            <div class="playpause"></div>
+        </div>
+        </div>
+    </div>
+    <div class="actions">
+        <button onclick="doReset()">
+            RESET
+        </button>
+        <button class="lapbtn" onclick="doLap()">
+            LAP
+        </button>
+    </div>
+    <div class="laps"></div>
+</div>
+</html>
